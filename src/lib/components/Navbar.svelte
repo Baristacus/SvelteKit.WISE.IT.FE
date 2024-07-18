@@ -1,3 +1,7 @@
+<script>
+	import { page } from '$app/stores';
+</script>
+
 <nav class="navbar fixed-top navbar-expand-lg bg-light" data-bs-theme="light">
 	<div class="container">
 		<a class="navbar-brand" href="/"><img src="/SQooL-Logo.svg" alt="SQooL" height="24" /></a>
@@ -19,18 +23,26 @@
 			<div class="d-flex">
 				<ul class="navbar-nav me-auto">
 					<li class="nav-item">
-						<a class="nav-link" href="/">홈</a>
+						<a class="nav-link {$page.url.pathname === '/' ? 'active' : ''}" href="/">홈</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/tutorial">학습하기</a>
+						<a
+							class="nav-link {$page.url.pathname.startsWith('/tutorial') ? 'active' : ''}"
+							href="/tutorial/sqlite">학습하기</a
+						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/sqleditor">에디터</a>
+						<a
+							class="nav-link {$page.url.pathname.startsWith('/sqleditor') ? 'active' : ''}"
+							href="/sqleditor">에디터</a
+						>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/wiselog">왲로그</a>
+						<a
+							class="nav-link {$page.url.pathname.startsWith('/wiselog') ? 'active' : ''}"
+							href="/wiselog">왲로그</a
+						>
 					</li>
-					<li class="nav-item"></li>
 				</ul>
 			</div>
 		</div>

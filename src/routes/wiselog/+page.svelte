@@ -10,10 +10,13 @@
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">제목</h4>
+					<h6 class="card-subtitle text-body-secondary">
+						카테고리 | 작성일자 | 조회수: 0회 | 추천수: 0회
+					</h6>
 				</div>
-				<img src="https://placehold.co/600x400" class="img-fluid" alt="..." />
+				<img src="https://placehold.co/1200x400?text=Thumbnail" class="img-fluid" alt="..." />
 				<div class="card-body">
-					<p class="card-text">WISE IT SQooL 개발자들의 소식을 전합니다.</p>
+					<p class="card-text">내용요약...[더보기]</p>
 				</div>
 			</div>
 		</div>

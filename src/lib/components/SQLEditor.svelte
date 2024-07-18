@@ -59,7 +59,7 @@
 	<div class="card mt-3">
 		<h5 class="card-header py-3">쿼리 실행 결과</h5>
 		<div class="card-body">
-			<pre><code>{queryResult}</code></pre>
+			<pre>{queryResult}</pre>
 		</div>
 	</div>
 {/if}
