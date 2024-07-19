@@ -1,27 +1,12 @@
-@font-face {
-	font-family: 'NanumSquareNeoVariable';
-	src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot);
-	src:
-		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.eot?#iefix)
-			format('embedded-opentype'),
-		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.woff)
-			format('woff'),
-		url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareNeo/NanumSquareNeo-Variable.ttf)
-			format('truetype');
-}
+@import '../Pretendard/pretendard.css';
+@import '../D2Coding/d2coding.css';
 
-@font-face {
-	font-family: 'D2Coding';
-	src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/D2Coding.woff')
-		format('woff');
-	font-weight: normal;
-	font-style: normal;
-}
-
+/* Font */
 html,
 body {
 	font-family:
-		'NanumSquareNeoVariable',
+		'Pretendard Variable',
+		Pretendard,
 		-apple-system,
 		BlinkMacSystemFont,
 		system-ui,
@@ -38,6 +23,6 @@ body {
 }
 pre,
 code,
-.coding {
-	font-family: 'D2Coding', 'monospace';
+.D2C {
+	font-family: D2Coding, 'D2 coding', monospace;
 }

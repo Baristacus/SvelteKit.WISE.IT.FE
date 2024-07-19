@@ -1,5 +1,13 @@
 <script>
 	import SqlEditor from '$lib/components/SQLEditor.svelte';
+
+	let isCollapsed = false;
+	let containerClass = 'container-fluid';
+
+	function toggleCollapse() {
+		isCollapsed = !isCollapsed;
+		containerClass = isCollapsed ? 'container' : 'container-fluid';
+	}
 </script>
 
 <svelte:head>
@@ -7,9 +15,9 @@
 	<meta name="description" content="WISE SQooL 학습안내서 페이지입니다." />
 </svelte:head>
 
-<div class="container-fluid">
+<div class={containerClass}>
 	<div class="row">
-		<div id="tutorialIndex" class="col-md-2">
+		<div class={isCollapsed ? 'col-md-3' : 'col-md-2'}>
 			<div class="card bg-light">
 				<div class="card-body">
 					<h5 class="card-title">시작하기</h5>
@@ -30,7 +38,12 @@
 				</div>
 			</div>
 		</div>
-		<div id="tutorialContent" class="col-md-4">
+		<div class={isCollapsed ? 'col-md-9' : 'col-md-4'}>
+			<div class="d-grid">
+				<button class="btn btn-info mb-3" on:click={toggleCollapse}>
+					{isCollapsed ? 'SQL 에디터 펼치기' : 'SQL 에디터 접기'}
+				</button>
+			</div>
 			<div class="card">
 				<div class="card-body">
 					<h4 class="card-title">시작하기</h4>
@@ -47,9 +60,11 @@
 				</div>
 			</div>
 		</div>
-		<div id="sqlEditor" class="col-md-6">
-			<SqlEditor initialValue="SELECT * FROM artist;" />
-		</div>
+		{#if !isCollapsed}
+			<div id="sqlEditor" class="col-md-6">
+				<SqlEditor initialValue="SELECT * FROM artist;" />
+			</div>
+		{/if}
 	</div>
 </div>
 
