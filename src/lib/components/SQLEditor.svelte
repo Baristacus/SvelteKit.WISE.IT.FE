@@ -24,11 +24,13 @@
 
 	export let initialValue = '';
 	let queryResult = '';
+	let result = '';
 
 	let editorView;
 	let editorElement;
 
 	onMount(() => {
+		createDB();
 		editorView = new EditorView({
 			extensions: [basicSetup, sql(), sqoolTheme],
 			parent: editorElement,
@@ -40,10 +42,45 @@
 		};
 	});
 
-	function executeQuery() {
+	async function createDB() {
+		// 백엔드 API 호출 및 결과 처리
+		await fetch('https://3741-121-131-9-81.ngrok-free.app/api/sqool/', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ dbname: 'Artist' }),
+			credentials: 'include'
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				result = JSON.stringify(data, null, 2);
+				console.log(result);
+			})
+			.catch((error) => {
+				queryResult = error;
+			});
+	}
+
+	async function executeQuery() {
 		const query = editorView.state.doc.toString();
 		// 백엔드 API 호출 및 결과 처리
-		queryResult = `${query}`;
+		await fetch('https://3741-121-131-9-81.ngrok-free.app/api/sqool/query', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({ query: query }),
+			credentials: 'include'
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				queryResult = JSON.stringify(data, null, 2);
+				console.log(queryResult);
+			})
+			.catch((error) => {
+				queryResult = error;
+			});
 	}
 </script>
 
