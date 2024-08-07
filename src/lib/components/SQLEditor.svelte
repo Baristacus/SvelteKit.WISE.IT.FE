@@ -44,7 +44,7 @@
 
 	async function createDB() {
 		// 백엔드 API 호출 및 결과 처리
-		await fetch('https://3741-121-131-9-81.ngrok-free.app/api/sqool/', {
+		await fetch('https://be.wiseit.kr/api/sqool/', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -65,7 +65,7 @@
 	async function executeQuery() {
 		const query = editorView.state.doc.toString();
 		// 백엔드 API 호출 및 결과 처리
-		await fetch('https://3741-121-131-9-81.ngrok-free.app/api/sqool/query', {
+		await fetch('https://be.wiseit.kr/api/sqool/query', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
