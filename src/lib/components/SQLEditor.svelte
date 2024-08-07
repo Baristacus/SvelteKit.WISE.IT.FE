@@ -44,7 +44,7 @@
 
 	async function createDB() {
 		// 백엔드 API 호출 및 결과 처리
-		await fetch('https://be.wiseit.kr/api/sqool/', {
+		await fetch('https://be.wiseit.kr/api/sqool/init', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'

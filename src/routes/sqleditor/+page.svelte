@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="container">
-	<SqlEditor initialValue="SELECT * FROM artist;" />
+	<SqlEditor />
 </div>
 
 <style>

@@ -62,7 +62,7 @@
 		</div>
 		{#if !isCollapsed}
 			<div id="sqlEditor" class="col-md-6">
-				<SqlEditor initialValue="SELECT * FROM artist;" />
+				<SqlEditor />
 			</div>
 		{/if}
 	</div>
